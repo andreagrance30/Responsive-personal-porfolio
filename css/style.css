@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
  /* ========== VARIABLE CSS ============= */
+
+ /*Iconos 
+ https://iconscout.com/unicons*/
+ 
  :root{
     --header-height: 3rem;
 
@@ -63,14 +67,18 @@
     --z-modal: 1000;
 
 
-    /*  ======== Background  ========= */
+    /*  ======== Background  ========= 
+    --background-body-color: hsl(var(--hue-color), 66%, 99%);
+    --border-color: none; */
+
+    
     --background-body-color: hsl(var(--hue-color), 66%, 99%);
     --border-color: none;
     --border-style: none;
     --footer-color: var(--first-color);
-
-
 }
+
+
 /* FONT SIZE FOR LARGER DEVICES */
 @media screen  and (min-width: 968px){
     :root{
@@ -106,6 +114,7 @@ body.dark-theme{
     --background-body-color: rgba(255, 255, 255, 0.068);
     --border-color: rgba(255, 255, 255, 0.425);
     --border-style: solid;
+  /*  --footer-color: var(--body-color);*/
     --footer-color: hsl(250, 53%, 18%);
 
 }
@@ -177,6 +186,7 @@ img{
 .section__title{
     font-size: var(--big-font-size);
     font-family: var(--gullible-font);
+    padding-top: inherit;
 }
 
 .section__subtitle{
@@ -221,7 +231,6 @@ img{
 .button--white{
     background-color: #FFF;
     color: var(--first-color);
-
   }
 
 .button--white:hover{
@@ -734,6 +743,12 @@ img{
     display:  inline-block;
     font-size: var(--small-font-size);
     margin-bottom: var(--mb-1);
+    color: var(--text-color);
+}
+
+.transparent_card{
+  background-color: var(--background-body-color);
+  border-color: var(--border-color);
 }
 
 .mirror-face{
@@ -804,11 +819,12 @@ img{
 
 .qualification__start-icon{
     font-size: var(--h3-font-size);
+    color: var(--mainText);
 }
 
 /*==================== PORTFOLIO =====================*/
 
-/*https://codepen.io/bJhA/pen/NWjBaQb*/
+/*https://codepen.io/bJhA/pen/NWjBaQb*/ 
 
 .blog-slider {
 	width: 95%;

@@ -30,51 +30,53 @@ console.log("THEME SETTING IS WORKING!")
 
 //===================================== MENU SHOW Y HIDDEN =========================
 const navMenu = document.getElementById('nav-menu')
-const navToggle= document.getElementById('nav-toggle')
-const navClose= document.getElementById('nav-close')
+const navToggle = document.getElementById('nav-toggle')
+const navClose = document.getElementById('nav-close')
 
-//======================================MENU SHOW===========
-/*Validate if the constant exists*/
+// ================  MENU SHOW  =============
+/*  Validate if the constant exists */
 if(navToggle){
-    navToggle.addEventListener('click',() => {
+    navToggle.addEventListener('click', () => {
         navMenu.classList.add('show-menu')
     })
 } 
 
-//======================================MENU HIDE===========
-/*Validate if the constant exists*/
+// ================  MENU HIDE  =============
+/*  Validate if the constant exists */
 if(navClose){
-    navClose.addEventListener('click',() => {
+    navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu')
     })
 } 
 
 
-console.log("MENU Y SETTING WORKING")
-//===========================REMOVE MENU PROFILE===========
+
+console.log("MENU Y SETTING WORKING!")
+//===================================== REMOVE MENU PRORFILE =========================
 const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction(){
     const navMenu = document.getElementById('nav-menu')
-    //when we click on nav__links, we remove the show menu
+    // when we click on nav__links, we remove the show menu
     navMenu.classList.remove('show-menu')
 }
 
-navLink.forEach(n => n.addEventListener('click',linkAction))
+navLink.forEach(n => n.addEventListener('click', linkAction))
 console.log("Remove menu profile is working!")
 
-//===========================Typewriter Effect===========
-/*import Typewriter from 'typewriter-effect/dist/core';*/
+
+//===================================== Typewriter Effect =========================
+
 
 new Typewriter('#typewriter', {
-  strings: ['Andrea Salinas','Computer-Engineering', 'Full stack-developer', 'Web-developer','Systems Analyst'],
-  autoStart: true,
-  loop:true,
-  cursor:"|"
+  strings: ['Andrea Salinas', 'System-Engineer', 'Functional-Analyst', 'Beginner-Developer', ''],
+  autoStart: true, 
+  loop: true,
+  cursor: "|"
 });
 console.log("Typewriter effect is working!")
 
-//===========================Portfolio Swiper===========
+//===================================== Portfolio Swiper =========================
 
 var swiper = new Swiper(".blog-slider", {
     spaceBetween: 30,
@@ -96,56 +98,43 @@ var swiper = new Swiper(".blog-slider", {
   });
 console.log("Portfolio Swiper is working!")
 
-//===================SCROLL UP======================
-function scrollup(){
-     const scrollup = document.getElementById('scroll-up');
-    // When the scroll higher than 560 viewpoint /height, then the scroll up icon showld appear and on 
-     if(this.scrollY >= 560){
-          scrollup.classList.add('show-scroll');
-     }
-     else{
-         scrollup.classList.remove('show-scroll')
-     }
-     console.log("Scroll up being called and working!")
+
+//===================================== SCROLL UP =========================
+function scrollUp(){
+    const scrollup = document.getElementById('scroll-up');
+    // When the scroll higher than 560 viewpoint /height , then the scroll up icon showld appear and on clicking should reach top of the page
+    if(this.scrollY >= 560) {
+        scrollup.classList.add('show-scroll');
+    }
+    else {
+        scrollup.classList.remove('show-scroll')
+    }
+    console.log("Scroll up being called and working!")
 }
+window.addEventListener('scroll', scrollUp)
 
-window.addEventListener('scroll',scrollup)
-
-/*=================== SCROLL SECTION ACTIVE HIGHLIGHT==========*/
+//===================================== SCROLL SECTION ACTIVE HIGHLIGHT =========================
 
 const sections = document.querySelectorAll('section[id]')
 
-function scrollActive(){
+function scrollActive() {
     const scrollY = window.pageYOffset
 
-    sections.forEach(current =>){
-        const sectionHeight = current.offseHeight
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight
         const sectionTop = current.offsetTop - 50;
-        sectionId = current.getAtribute('id')
+        sectionId = current.getAttribute('id')
 
         if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__menu a[href*='+ sectionId + ']').classList.add('active-link')
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
         }else{
-            document.querySelector('.nav__menu a[href*='+ sectionId + ']').classList.remove('active-link')
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
         }
-    }
+    })
 
+
+    console.log("Section highlight working!")
 }
-
-window.addEventListener('scroll', scrollup)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+window.addEventListener('scroll', scrollActive)
 
 
